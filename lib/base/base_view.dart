@@ -1,7 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:transaction_log_app/helper/logger.dart';
-
-
 class BaseView<T> extends StatefulWidget {
   final Widget Function(BuildContext context) builder;
   final ValueKey viewKey;
@@ -17,7 +14,6 @@ class _BaseViewState<T> extends State<BaseView<T>> {
   @override
   void initState() {
     super.initState();
-    TraceLogger.pageName=widget.viewKey.value;
   }
 
   @override
@@ -25,3 +21,5 @@ class _BaseViewState<T> extends State<BaseView<T>> {
     return widget.builder(context);
   }
 }
+
+
