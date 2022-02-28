@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transaction_log_app/helper/local_storage_helper.dart';
 
 
 class BaseButton extends StatefulWidget{
@@ -26,5 +27,6 @@ extension on BuildContext {
   void log(String actionName){
     var pageName=ModalRoute.of(this)!.settings.name!;
     debugPrint("$pageName  -  $actionName");
+    SharedPreferenceService.instance?.saveStringList("traceLog", "$pageName  -  $actionName");
   }
 }
