@@ -2,25 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:transaction_log_app/base/base_view.dart';
 import 'package:transaction_log_app/base/widget/base_appbar.dart';
 import 'package:transaction_log_app/base/widget/base_button.dart';
-import 'package:transaction_log_app/view/page3.dart';
 import 'package:transaction_log_app/view/widgets/log_list.dart';
 
-class Page2 extends StatefulWidget {
-  final String title = "Page2";
-  const Page2({Key? key}) : super(key: key);
+class Page3 extends StatefulWidget {
+  final String title = "Page3";
+  const Page3({Key? key}) : super(key: key);
 
   @override
-  Page2State createState() => Page2State();
+  Page3State createState() => Page3State();
 }
 
-class Page2State extends State<Page2> {
+class Page3State extends State<Page3> {
   late GlobalKey _key;
   late ValueKey logListKey;
 
   @override
   void initState() {
     _key = GlobalKey();
-    logListKey = const ValueKey("LogListPage2");
+    logListKey = const ValueKey("LogListPage3");
     super.initState();
   }
 
@@ -31,20 +30,13 @@ class Page2State extends State<Page2> {
         builder: (context) {
           return Scaffold(
               key: _key,
-              appBar: BaseAppBar(
-                title: widget.title,
-                leadingFunction: () async {},
-              ),
+              appBar: BaseAppBar(title: widget.title),
               floatingActionButton: BaseCircleButton(
-                key: const ValueKey("Page2NextButton"),
+                key: const ValueKey("Page3NextButton"),
                 onPressed: () async {
-                  await Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const Page3(), //pass any arguments
-                          settings: const RouteSettings(name: "page3")));
-                  setState(() {});
+                  setState(() {
+                    
+                  });
                 },
               ),
               body: LogList(key: logListKey));

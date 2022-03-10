@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:transaction_log_app/view/home_page.dart';
 import 'package:transaction_log_app/view/page2.dart';
-
-
+import 'package:transaction_log_app/view/page3.dart';
 
 class RouterManager {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case 'home':
-        return MaterialPageRoute(settings:settings,builder: (_) => const HomePage(key:Key("Home")));
+        return MaterialPageRoute(
+            settings: settings,
+            builder: (_) => const HomePage(key: Key("Home")));
       case 'page2':
-        return MaterialPageRoute(settings:settings,builder: (_) => const Page2(key:Key("Page2")));
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const Page2(key: Key("Page2")));
+      case 'page3':
+        return MaterialPageRoute(
+            settings: settings, builder: (_) => const Page3(key: Key("Page3")));
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
